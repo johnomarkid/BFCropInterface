@@ -24,7 +24,6 @@ Requirements
 Under Development
 -----------------
 * Set custom nodes
-* Change shadow color and opacity
 * Automatically detect and adjust to size to fit vs size to fill content modes
 * Set color of lines between nodes
 * Update usage settings
