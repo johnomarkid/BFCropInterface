@@ -22,6 +22,7 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
+
 #import <UIKit/UIKit.h>
 
 @interface BFCropInterface : UIImageView {
@@ -43,6 +44,7 @@
 }
 @property (nonatomic, assign) CGRect crop;
 @property (nonatomic, strong) UIView *cropView;
+@property (nonatomic, strong) UIColor *shadowColor;
 
 - (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image;
 - (UIImage*)getCroppedImage;
