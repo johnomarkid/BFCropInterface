@@ -27,6 +27,7 @@
 }
 @property (nonatomic, assign) CGRect crop;
 @property (nonatomic, strong) UIView *cropView;
+@property (nonatomic, strong) UIColor *shadowColor;
 
 - (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image;
 - (UIImage*)getCroppedImage;

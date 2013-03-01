@@ -38,6 +38,7 @@
         self.contentMode = UIViewContentModeScaleAspectFit;
         self.userInteractionEnabled = YES;
 
+        // set image to crop
         self.image = image;
 
         topView = [self newEdgeView];
@@ -96,6 +97,22 @@
     
     [self updateBounds];
 }
+
+#pragma mark - setters
+
+- (void)setShadowColor:(UIColor *)shadowColor {
+    _shadowColor = shadowColor;
+    topView.backgroundColor = _shadowColor;
+    bottomView.backgroundColor = _shadowColor;
+    leftView.backgroundColor = _shadowColor;
+    rightView.backgroundColor = _shadowColor;
+    topLeftView.backgroundColor = _shadowColor;
+    topRightView.backgroundColor = _shadowColor;
+    bottomLeftView.backgroundColor = _shadowColor;
+    bottomRightView.backgroundColor = _shadowColor;
+}
+
+#pragma mark - motion
 
 - (CGFloat)distanceBetweenTwoPoints:(CGPoint)fromPoint toPoint:(CGPoint)toPoint {
     float x = toPoint.x - fromPoint.x;
