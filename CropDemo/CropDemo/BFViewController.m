@@ -29,10 +29,14 @@
     self.originalImage = [UIImage imageNamed:@"dumbo.jpg"];
     self.displayImage.image = self.originalImage;
 
+    // ** this is where the magic happens
+    
     // allocate crop interface with frame and image being cropped
     self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage];
     // this is the default color even if you don't set it
     self.cropper.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.60];
+    // white is the default border color.
+    self.cropper.borderColor = [UIColor whiteColor];
     // add interface to superview. here we are covering the main image view.
     [self.displayImage addSubview:self.cropper];
 }

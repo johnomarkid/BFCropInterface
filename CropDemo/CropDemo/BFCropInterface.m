@@ -129,6 +129,11 @@
     bottomRightView.backgroundColor = _shadowColor;
 }
 
+- (void)setBorderColor:(UIColor *)borderColor {
+    _borderColor = borderColor;
+    self.cropView.layer.borderColor = _borderColor.CGColor;
+}
+
 #pragma mark - motion
 
 - (CGFloat)distanceBetweenTwoPoints:(CGPoint)fromPoint toPoint:(CGPoint)toPoint {
