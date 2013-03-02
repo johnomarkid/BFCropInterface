@@ -28,6 +28,3 @@ Under Development
 * Update usage settings
 * Make a cocoapod
 
-License
--------
-This code is made available under the terms of the BSD license as included in the source files. Go fork and prosper!
