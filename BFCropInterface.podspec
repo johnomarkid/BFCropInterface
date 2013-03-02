@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "BFCropInterface"
   s.version      = "1.0.0"
-  s.summary      = "A better crop tool for iOS"
+  s.summary      = "A better crop tool for iOS."
   s.homepage     = "https://github.com/nicholjs/BFCropInterface"
   s.license      = 'MIT'
   s.author       = { "John Nichols" => "john@bitfountaincode.com" }
