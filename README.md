@@ -15,7 +15,7 @@ Usage
 ------
 Are you sick of drabby furniture in the background of your mirror pics? Don't you hate when your drunk friend is puking during your group pic in Vegas? If so, BFCropInterface can help.
 
-Drop the BFCropInterface.h/m files into your project. See example project for usage. It's basically allocate and add to subview, but I'll go more in depth when I am less lazy. 
+Install via cocoapods, or drop the BFCropInterface.h/m files into your project. See example project for usage. It's basically allocate and add to subview, but I'll go more in depth when I am less lazy. 
 
 Requirements
 ------------
@@ -26,5 +26,4 @@ Under Development
 * Set custom nodes
 * Automatically detect and adjust to size to fit vs size to fill content modes
 * Update usage settings
-* Make a cocoapod
 
