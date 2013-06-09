@@ -1,7 +1,7 @@
 BFCropInterface
 ===============
 
-A better crop tool for iOS. A [BitFountain](http://bitfountaincode.com/) production.
+A better crop tool for iOS. 
 
 ![Alt text](/screenshots/uncropped.jpg)
 ![Alt text](/screenshots/cropped.jpg)
