@@ -72,6 +72,34 @@
     return self;
 }
 
+- (id) initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // Initialization code
+        self.contentMode = UIViewContentModeScaleAspectFit;
+        self.userInteractionEnabled = YES;
+
+        topView = [self newEdgeView];
+        bottomView = [self newEdgeView];
+        leftView = [self newEdgeView];
+        rightView = [self newEdgeView];
+        topLeftView = [self newCornerView];
+        topRightView = [self newCornerView];
+        bottomLeftView = [self newCornerView];
+        bottomRightView = [self newCornerView];
+
+    }
+    return self;
+}
+
+-(void) setImage:(UIImage *)image
+{
+    [super setImage:image];
+    [self.cropView removeFromSuperview];
+    [self initialCropView];
+}
+
 - (void)initialCropView {
     CGFloat width;
     CGFloat height;
