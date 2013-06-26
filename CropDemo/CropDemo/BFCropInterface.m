@@ -72,6 +72,33 @@
     return self;
 }
 
+-(id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.contentMode = UIViewContentModeScaleAspectFit;
+        self.userInteractionEnabled = YES;
+
+        topView = [self newEdgeView];
+        bottomView = [self newEdgeView];
+        leftView = [self newEdgeView];
+        rightView = [self newEdgeView];
+        topLeftView = [self newCornerView];
+        topRightView = [self newCornerView];
+        bottomLeftView = [self newCornerView];
+        bottomRightView = [self newCornerView];
+
+    }
+    return self;
+    
+}
+
+-(void) setImage:(UIImage *)image {
+    [super setImage:image];
+    [self.cropView removeFromSuperview];
+    [self initialCropView];
+}
+
 - (void)initialCropView {
     CGFloat width;
     CGFloat height;
@@ -84,6 +111,7 @@
     y      = (self.frame.size.height - height) / 2;
     
     UIView* cropView = [[UIView alloc] initWithFrame:CGRectMake(x, y, width, height)];
+
     cropView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     cropView.layer.borderColor = [[UIColor whiteColor] CGColor];
     cropView.layer.borderWidth = 1.0;
