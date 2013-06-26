@@ -21,24 +21,28 @@
     
     // make your image view content mode == aspect fit
     // yields best results
-    self.displayImage.contentMode = UIViewContentModeScaleAspectFit;
     
     // must have user interaction enabled on view that will hold crop interface
-    self.displayImage.userInteractionEnabled = YES;
-    self.displayImage.frame = CGRectMake(20, 20, 280, 360);
+
+    
+
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+
+    [super viewDidAppear:animated];
+
     self.originalImage = [UIImage imageNamed:@"dumbo.jpg"];
-    self.displayImage.image = self.originalImage;
 
     // ** this is where the magic happens
-    
+
     // allocate crop interface with frame and image being cropped
-    self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage];
     // this is the default color even if you don't set it
-    self.cropper.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.60];
+    self.imageToCrop.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.60];
     // white is the default border color.
-    self.cropper.borderColor = [UIColor whiteColor];
-    // add interface to superview. here we are covering the main image view.
-    [self.displayImage addSubview:self.cropper];
+    self.imageToCrop.borderColor = [UIColor whiteColor];
+
+    self.imageToCrop.image = self.originalImage;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,24 +52,20 @@
 }
 
 - (IBAction)cropPressed:(id)sender {
+    
     // crop image
-    UIImage *croppedImage = [self.cropper getCroppedImage];
+    UIImage *croppedImage = [self.imageToCrop getCroppedImage];
     
     // remove crop interface from superview
-    [self.cropper removeFromSuperview];
-    self.cropper = nil;
     
     // display new cropped image
-    self.displayImage.image = croppedImage;
+    self.imageToCrop.image = croppedImage;
 }
 
 - (IBAction)originalPressed:(id)sender {
     // set main image view to original image and add cropper if not already added
-    self.displayImage.image = self.originalImage;
-    if (!self.cropper) {
-        self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage];
-        [self.displayImage addSubview:self.cropper];
-    }
+    self.imageToCrop.image = self.originalImage;
+    
 }
 
 @end

@@ -11,9 +11,10 @@
 
 @interface BFViewController : UIViewController
 
-@property (nonatomic, strong) IBOutlet UIImageView *displayImage;
+@property (weak, nonatomic) IBOutlet BFCropInterface *imageToCrop;
+
 @property (nonatomic, strong) UIImage *originalImage;
-@property (nonatomic, strong) BFCropInterface *cropper;
+
 
 - (IBAction)cropPressed:(id)sender;
 - (IBAction)originalPressed:(id)sender;
