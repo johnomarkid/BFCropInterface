@@ -153,6 +153,17 @@
     }
 }
 
+- (void)setCropViewPosition:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height {
+    CGRect frame = self.cropView.frame;
+    frame.origin.x = x;
+    frame.origin.y = y;
+    frame.size.width = width;
+    frame.size.height = height;
+    self.cropView.frame = frame;
+
+    [self updateBounds];
+}
+
 #pragma mark - motion
 
 - (CGFloat)distanceBetweenTwoPoints:(CGPoint)fromPoint toPoint:(CGPoint)toPoint {

@@ -39,6 +39,8 @@
     self.cropper.borderColor = [UIColor whiteColor];
     self.cropper.borderWidth = 1.5;
     self.cropper.showNodes = YES;
+    [self.cropper setCropViewPosition:50.0 y:100.0 width:150.0 height:200.0];
+
     // add interface to superview. here we are covering the main image view.
     [self.displayImage addSubview:self.cropper];
 }

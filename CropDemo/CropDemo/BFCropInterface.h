@@ -56,5 +56,6 @@
 
 - (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image;
 - (UIImage*)getCroppedImage;
+- (void)setCropViewPosition:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height;
 
 @end
