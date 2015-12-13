@@ -41,13 +41,21 @@
     UIView *topRightView;
     UIView *bottomLeftView;
     UIView *bottomRightView;
+
+    UIImageView *tlnode;
+    UIImageView *trnode;
+    UIImageView *blnode;
+    UIImageView *brnode;
 }
 @property (nonatomic, assign) CGRect crop;
 @property (nonatomic, strong) UIView *cropView;
 @property (nonatomic, strong) UIColor *shadowColor;
 @property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic) BOOL showNodes;
 
 - (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image;
 - (UIImage*)getCroppedImage;
+- (void)setCropViewPosition:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height;
 
 @end
