@@ -90,10 +90,10 @@
     cropView.backgroundColor = [UIColor clearColor];
     
     UIImage *nodeImage = [UIImage imageNamed:@"node.png"];
-    UIImageView *tlnode = [[UIImageView alloc]initWithImage:nodeImage];
-    UIImageView *trnode = [[UIImageView alloc]initWithImage:nodeImage];
-    UIImageView *blnode = [[UIImageView alloc]initWithImage:nodeImage];
-    UIImageView *brnode = [[UIImageView alloc]initWithImage:nodeImage];
+    tlnode = [[UIImageView alloc]initWithImage:nodeImage];
+    trnode = [[UIImageView alloc]initWithImage:nodeImage];
+    blnode = [[UIImageView alloc]initWithImage:nodeImage];
+    brnode = [[UIImageView alloc]initWithImage:nodeImage];
     tlnode.frame = CGRectMake(cropView.bounds.origin.x - 13, cropView.bounds.origin.y -13, 26, 26);
     trnode.frame = CGRectMake(cropView.frame.size.width - 13, cropView.bounds.origin.y -13, 26, 26);
     blnode.frame = CGRectMake(cropView.bounds.origin.x - 13, cropView.frame.size.height - 13, 26, 26);
@@ -136,6 +136,21 @@
 
 - (void)setBorderWidth:(CGFloat)borderWidth {
     self.cropView.layer.borderWidth = borderWidth;
+}
+
+- (void)setShowNodes:(BOOL)showNodes {
+    if (showNodes) {
+        [self.cropView addSubview:tlnode];
+        [self.cropView addSubview:trnode];
+        [self.cropView addSubview:blnode];
+        [self.cropView addSubview:brnode];
+    }
+    else {
+        [tlnode removeFromSuperview];
+        [trnode removeFromSuperview];
+        [blnode removeFromSuperview];
+        [brnode removeFromSuperview];
+    }
 }
 
 #pragma mark - motion

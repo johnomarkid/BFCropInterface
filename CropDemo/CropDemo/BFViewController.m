@@ -38,6 +38,7 @@
     // white is the default border color.
     self.cropper.borderColor = [UIColor whiteColor];
     self.cropper.borderWidth = 1.5;
+    self.cropper.showNodes = YES;
     // add interface to superview. here we are covering the main image view.
     [self.displayImage addSubview:self.cropper];
 }
