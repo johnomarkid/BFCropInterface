@@ -134,6 +134,10 @@
     self.cropView.layer.borderColor = _borderColor.CGColor;
 }
 
+- (void)setBorderWidth:(CGFloat)borderWidth {
+    self.cropView.layer.borderWidth = borderWidth;
+}
+
 #pragma mark - motion
 
 - (CGFloat)distanceBetweenTwoPoints:(CGPoint)fromPoint toPoint:(CGPoint)toPoint {
