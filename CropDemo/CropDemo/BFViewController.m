@@ -32,7 +32,7 @@
     // ** this is where the magic happens
     
     // allocate crop interface with frame and image being cropped
-    self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage];
+    self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage nodeRadius:3];
     // this is the default color even if you don't set it
     self.cropper.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.60];
     // white is the default border color.
@@ -67,7 +67,7 @@
     // set main image view to original image and add cropper if not already added
     self.displayImage.image = self.originalImage;
     if (!self.cropper) {
-        self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage];
+        self.cropper = [[BFCropInterface alloc]initWithFrame:self.displayImage.bounds andImage:self.originalImage nodeRadius:3];
         [self.displayImage addSubview:self.cropper];
     }
 }
