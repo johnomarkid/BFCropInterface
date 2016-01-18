@@ -46,6 +46,8 @@
     UIImageView *trnode;
     UIImageView *blnode;
     UIImageView *brnode;
+    
+    CGFloat nodeRadius;
 }
 @property (nonatomic, assign) CGRect crop;
 @property (nonatomic, strong) UIView *cropView;
@@ -53,8 +55,9 @@
 @property (nonatomic, strong) UIColor *borderColor;
 @property (nonatomic) CGFloat borderWidth;
 @property (nonatomic) BOOL showNodes;
+@property (nonatomic) CGFloat nodeRadius;
 
-- (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image;
+- (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image nodeRadius:(CGFloat)nodeRadius;
 - (UIImage*)getCroppedImage;
 - (void)setCropViewPosition:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height;
 

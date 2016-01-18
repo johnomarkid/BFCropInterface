@@ -47,7 +47,7 @@
 
 @implementation BFCropInterface
 
-- (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image
+- (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image nodeRadius:(CGFloat)nodeRadius
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -57,6 +57,7 @@
 
         // set image to crop
         self.image = image;
+        self.nodeRadius = nodeRadius;
 
         topView = [self newEdgeView];
         bottomView = [self newEdgeView];
@@ -94,10 +95,10 @@
     trnode = [[UIImageView alloc]initWithImage:nodeImage];
     blnode = [[UIImageView alloc]initWithImage:nodeImage];
     brnode = [[UIImageView alloc]initWithImage:nodeImage];
-    tlnode.frame = CGRectMake(cropView.bounds.origin.x - 13, cropView.bounds.origin.y -13, 26, 26);
-    trnode.frame = CGRectMake(cropView.frame.size.width - 13, cropView.bounds.origin.y -13, 26, 26);
-    blnode.frame = CGRectMake(cropView.bounds.origin.x - 13, cropView.frame.size.height - 13, 26, 26);
-    brnode.frame = CGRectMake(cropView.frame.size.width - 13, cropView.frame.size.height - 13, 26, 26);
+    tlnode.frame = CGRectMake(cropView.bounds.origin.x - self.nodeRadius, cropView.bounds.origin.y - self.nodeRadius, 2 * self.nodeRadius, 2 * self.nodeRadius);
+    trnode.frame = CGRectMake(cropView.frame.size.width - self.nodeRadius, cropView.bounds.origin.y - self.nodeRadius, 2 * self.nodeRadius, 2 * self.nodeRadius);
+    blnode.frame = CGRectMake(cropView.bounds.origin.x - self.nodeRadius, cropView.frame.size.height - self.nodeRadius, 2 * self.nodeRadius, 2 * self.nodeRadius);
+    brnode.frame = CGRectMake(cropView.frame.size.width - self.nodeRadius, cropView.frame.size.height - self.nodeRadius, 2 * self.nodeRadius, 2 * self.nodeRadius);
     
     tlnode.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin;
     trnode.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin;
